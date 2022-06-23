@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:100,300,400,700');
+
+:root {
+	--black: #000;
+	--white: #fff;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Oswald', sans-serif;
+	font-size: 62.5%;
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #434750;
+}
+#small-menu,
+#large-menu,
+#largest-menu {
+	position: relative;
+	/* right: 0; */
+	transform: skewY(-15deg);
+}
+#small-menu {
+	left: -15%;
+}
+/* #large-menu {
+	left: 0;
+} */
+#largest-menu {
+	left: 15%;
+}
+
+#small-menu li,
+#large-menu li,
+#largest-menu li {
+	position: relative;
+	list-style: none;
+	background: #3e3f46;
+	transition: 0.6s;
+	z-index: var(--z);
+}
+#small-menu li {
+	width: 12rem;
+	padding: 1.5rem;
+}
+#large-menu li {
+	width: 18rem;
+	padding: 2.25rem;
+}
+#largest-menu li {
+	width: 24rem;
+	padding: 3rem;
+}
+
+#small-menu li::before,
+#large-menu li::before,
+#largest-menu li::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	height: 100%;
+	background: #3e3f46;
+	filter: brightness(0.7);
+	transform-origin: right;
+	transform: skewY(45deg);
+	transition: 0.6s;
+}
+#small-menu li::before {
+	left: -4rem;
+	width: 4rem;
+}
+#large-menu li::before {
+	left: -6rem;
+	width: 6rem;
+}
+#largest-menu li::before {
+	left: -8rem;
+	width: 8rem;
+}
+
+#small-menu li::after,
+#large-menu li::after,
+#largest-menu li::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 100%;
+	background: #3e3f46;
+	filter: brightness(0.85);
+	transform-origin: bottom;
+	transform: skewX(45deg);
+	transition: 0.6s;
+}
+#small-menu li::after {
+	top: -4rem;
+	height: 4rem;
+}
+#large-menu li::after {
+	top: -6rem;
+	height: 6rem;
+}
+#largest-menu li::after {
+	top: -8rem;
+	height: 8rem;
+}
+
+#small-menu li:hover,
+#large-menu li:hover,
+#largest-menu li:hover {
+	transform: translateX(-10rem);
+	background: rgb(var(--r),var(--g),var(--b));
+	transition: 0.6s;
+}
+
+#small-menu li:hover::before,
+#large-menu li:hover::before,
+#largest-menu li:hover::before {
+	background: rgb(var(--r),var(--g),var(--b));
+	filter: brightness(0.7);
+}
+
+#small-menu li:hover::after,
+#large-menu li:hover::after,
+#largest-menu li:hover::after {
+	background: rgb(var(--r),var(--g),var(--b));
+	filter: brightness(0.85);
+}
+
+#small-menu li a,
+#large-menu li a,
+#largest-menu li a {
+	text-decoration: none;
+	color: #999;
+	display: block;
+	text-transform: uppercase;
+	font-weight: 100;
+	transition: 0.6s;
+}
+#small-menu li a {
+	font-size: 1.5rem;
+	letter-spacing: 1px;
+}
+#large-menu li a {
+	font-size: 2.25rem;
+	letter-spacing: 1.5px;
+}
+#largest-menu li a {
+	font-size: 3rem;
+	letter-spacing: 2px;
+}
+
+#small-menu li:hover a,
+#large-menu li:hover a,
+#largest-menu li:hover a {
+	color: var(--white);
+}
+
+#small-menu li span,
+#large-menu li span,
+#largest-menu li span {
+	position: absolute;
+	height: 100%;
+	transform-origin: right;
+	transform: skewY(45deg);
+	transition: 0.6s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: rgba(var(--r),var(--g),var(--b), 0.5);
+}
+#small-menu li span {
+	top: 1px;
+	left: -4rem;
+	width: 4rem;
+	font-size: 3.8rem;
+}
+#large-menu li span {
+	top: 1.5px;
+	left: -6rem;
+	width: 6rem;
+	font-size: 5.7rem;
+}
+#largest-menu li span {
+	top: 2px;
+	left: -8rem;
+	width: 8rem;
+	font-size: 7.6rem;
+}
+
+#small-menu li:hover span,
+#large-menu li:hover span,
+#largest-menu li:hover span {
+	filter: brightness(1);
+	color: var(--white);
+}
+
+#small-menu li:last-child::after {
+	box-shadow: -120px 120px 20px rgba(0, 0, 0, 0.25);
+}
+#large-menu li:last-child::after {
+	box-shadow: -180px 180px 30px rgba(0, 0, 0, 0.25);
+}
+#largest-menu li:last-child::after {
+	box-shadow: -240px 240px 40px rgba(0, 0, 0, 0.25);
+}
